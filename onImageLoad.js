@@ -8,7 +8,7 @@ $(function(){
 			var file = this.files[0];
 			fr = new FileReader();
 			fr.onload = function(event) {
-				 callback(event.target.result);
+				 callback.apply($obj[0],[event.target.result]);
 			};
 			fr.readAsDataURL(file);
 		});
